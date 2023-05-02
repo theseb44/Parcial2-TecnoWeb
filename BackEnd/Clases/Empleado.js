@@ -2,7 +2,7 @@ import { Persona } from "./Persona";
 
 
 
-class Empleado extends Persona {
+export class Empleado extends Persona {
 
     constructor(id, nombre, apellido_paterno, apellido_materno, edad, salario, puesto_trabajo ){
 

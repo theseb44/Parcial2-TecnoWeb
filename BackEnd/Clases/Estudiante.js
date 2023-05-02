@@ -1,6 +1,6 @@
 import { Persona } from "./Persona";
 
-class Estudiante extends Persona {
+export class Estudiante extends Persona {
 
     constructor(id, nombre, apellido_paterno, apellido_materno, edad, semestre, universidad ){
 
