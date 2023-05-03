@@ -1,4 +1,4 @@
-const btn_E=document.getElementById("btn_E");
+//const btn_E=document.getElementById("btn_E");
 
 const E_Nombre=document.getElementById("E_Nombre");
 const E_p_apellido=document.getElementById("E_P-apellido");
@@ -22,4 +22,4 @@ const AgregarEstudiante=()=>{
    
 }
 
-btn_E.addEventListener("click",AgregarEstudiante);
+//btn_E.addEventListener("click",AgregarEstudiante);

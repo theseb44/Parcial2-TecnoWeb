@@ -1,6 +1,6 @@
 import { Estudiante } from "../Clases/Estudiante.js";
 
-const btn_E=document.getElementById("btn_E");
+//const btn_E=document.getElementById("btn_E");
 const nombre = document.getElementById("E_Nombre")
 const m_apellido = document.getElementById("E_M-apellido")
 const p_apellido = document.getElementById("E_P-apellido")
@@ -14,7 +14,7 @@ function crearPersona() {
     return JSON.stringify(new Estudiante(con,n,apellido,sapellido,eda,semestr,uni));
 }
 
-
+/*
 btn_E.addEventListener("click",(e)=>{
     e.preventDefault();
     n=nombre.value;
@@ -27,6 +27,6 @@ btn_E.addEventListener("click",(e)=>{
 });
 
 export {crearPersona};
-
+*/
 
 
