@@ -1,3 +1,4 @@
+import {Empleado} from "../BackEnd/Clases/Empleado"
 const btn_Em=document.getElementById("btn_Em");
 
 const Em_Nombre=document.getElementById("EM_Nombre");
@@ -8,16 +9,10 @@ const salario=document.getElementById("Salario");
 const puesto=document.getElementById("Puesto");
 
 const AgregarEmpleado=()=>{
-    const Empleado={
-        nombre:Em_Nombre.value,
-        primer_apellido:Em_p_apellido.value,
-        segundo_apellido:Em_s_apellido.value,
-        edad:Em_edad.value,
-        salario:salario.value,
-        puesto:puesto.value
-    };
 
-    const ObjetoEmpleado=JSON.stringify(Empleado);
+    let empleado = new Empleado(Em_Nombre, Em_p_apellido, Em_s_apellido, Em_edad, salario, puesto);
+
+    const ObjetoEmpleado=JSON.stringify(empleado);
     localStorage.setItem("Empleado",ObjetoEmpleado);
    
 };

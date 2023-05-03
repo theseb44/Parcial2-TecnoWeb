@@ -1,4 +1,5 @@
-//const btn_E=document.getElementById("btn_E");
+import { Estudiante } from "../BackEnd/Clases/Estudiante";
+const btn_E=document.getElementById("btn_E");
 
 const E_Nombre=document.getElementById("E_Nombre");
 const E_p_apellido=document.getElementById("E_P-apellido");
@@ -8,18 +9,11 @@ const semestre=document.getElementById("Semestre");
 const universidad=document.getElementById("Universidad");
 
 const AgregarEstudiante=()=>{
-    const Estudiante={
-        nombre:E_Nombre.value,
-        primer_apellido:E_p_apellido.value,
-        segundo_apellido:E_s_apellido.value,
-        edad:E_edad.value,
-        semestre:semestre.value,
-        universidad:universidad.value
-    };
+    let estudiante = new Estudiante(E_Nombre, E_p_apellido, E_s_apellido, E_edad, semestre, universidad);
     
-    const ObjetoEstudiante=JSON.stringify(Estudiante);
+    const ObjetoEstudiante=JSON.stringify(estudiante);
     localStorage.setItem("Estudiante",ObjetoEstudiante);
    
 }
 
-//btn_E.addEventListener("click",AgregarEstudiante);
+btn_E.addEventListener("click",AgregarEstudiante);
