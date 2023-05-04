@@ -1,27 +1,28 @@
-import {Empleado} from "../Clases/Empleado"
+import {Empleado} from "../Clases/Empleado.js"
 const botonAct = document.getElementById("ActualizarBtnEmp")
-const idEmpleado = document.getElementById("id-emp-Act").value;
-const Em_Nombre=document.getElementById("EM_Nombre").value;
-const Em_p_apellido=document.getElementById("EM_P-apellido").value;
-const Em_m_apellido=document.getElementById("EM_M-apellido").value;
-const Em_edad=document.getElementById("EM_Edadid").value;
-const salario=document.getElementById("Salario").value;
-const puesto=document.getElementById("Puesto").value;
+const idEmpleado = document.getElementById("id-emp-Act")
+const Em_Nombre=document.getElementById("EM_Nombre")
+const Em_p_apellido=document.getElementById("EM_P-apellido")
+const Em_m_apellido=document.getElementById("EM_M-apellido")
+const Em_edad=document.getElementById("EM_Edadid")
+const salario=document.getElementById("Salario")
+const puesto=document.getElementById("Puesto")
 
-const ActualizarDatos = () => {
-
-    let empleado = new Empleado(Em_Nombre, Em_p_apellido,Em_m_apellido, Em_edad, salario, puesto )
+const ActualizarDatos = (e) => {
+    e.preventDefault();
+const idEmpleado = document.getElementById("id-emp-Act")
+    let empleado = new Empleado(Em_Nombre.value, Em_p_apellido.value,Em_m_apellido.value, Em_edad.value, salario.value, puesto.value )
     let empleadojson = JSON.stringify(empleado);
     try{
-        fetch(`http://localhost:3000/updateE/${idEmpleado.value}`, {
+        fetch(`http://localhost:3000/updateEm/${idEmpleado.value}`, {
             method : "put",
             body : empleadojson
         })
 
-    }catch(e){
+    }catch(error){
 
-        alert(e);
+        alert(error);
     }
 }
 
-botonAct.addEventListener("click", ActualizarDatos());
+botonAct.addEventListener("click", ActualizarDatos);

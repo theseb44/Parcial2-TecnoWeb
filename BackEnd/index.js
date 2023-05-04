@@ -1,7 +1,11 @@
 const express = require('express');
 const sql=require("mysql");
+const cors=require("cors");
 const app = express()
 const port = 3000
+
+
+app.use(cors());
 
 app.use(express.json({
     type:"*/*"
@@ -36,7 +40,7 @@ app.delete('/eliminarE/:id',(req,res)=>{
 
 app.delete('/eliminarEm/:id',(req,res)=>{
     const userid=req.params.id;
-    const sql=`DELETE FROM empleado WHERE id = ${userid}`;
+    const sql=`DELETE FROM empleados WHERE id = ${userid}`;
     conexion.query(sql,(error)=>{
         if (error) throw error;
         res.send("listo");
@@ -45,14 +49,12 @@ app.delete('/eliminarEm/:id',(req,res)=>{
 
 
 
-
-
 //-----------Actualizar base de datos---------------------
 app.put('/updateE/:id',(req,res)=>{
     const userid=req.params.id;
     const datos=req.body;
     
-    const sql=`UPDATE estudiante SET nombre='${datos.nombre}',p_apellido='${datos.primer_apellido}',s_apellido='${datos.segundo_apellido}',edad='${datos.edad}',semestre='${datos.semestre}',uni='${datos.universidad}' WHERE id =${userid}`;
+    const sql=`UPDATE estudiante SET nombre='${datos.nombre}',p_apellido='${datos.apellido_paterno}',s_apellido='${datos.apellido_materno}',edad='${datos.edad}',semestre='${datos.semestre}',uni='${datos.universidad}' WHERE id =${userid}`;
     conexion.query(sql,(error)=>{
         if (error) throw error;
         res.send("listo");
@@ -64,7 +66,7 @@ app.put('/updateEm/:id',(req,res)=>{
     const userid=req.params.id;
     const datos=req.body;
     
-    const sql=`UPDATE empleados SET nombre='${datos.nombre}',p_apellido='${datos.primer_apellido}',s_apellido='${datos.segundo_apellido}',edad='${datos.edad}',salario='${datos.salario}',puesta='${datos.puesto}' WHERE id =${userid}`;
+    const sql=`UPDATE empleados SET nombre='${datos.nombre}',p_apellido='${datos.apellido_paterno}',s_apellido='${datos.apellido_materno}',edad='${datos.edad}',salario='${datos.salario}',puesta='${datos.puesto_trabajo}' WHERE id =${userid}`;
     conexion.query(sql,(error)=>{
         if (error) throw error;
         res.send("listo");
@@ -115,8 +117,8 @@ app.post('/Estudiante', (req, res) => {
     console.log("usando push puta");
     const data=req.body;
     
-    const sql = `INSERT INTO estudiante (nombre, p_apellido	, s_apellido, edad, semestre, uni) VALUES ('${data.nombre}', '${data.primer_apellido}', 
-    '${data.segundo_apellido}', '${data.edad}', '${data.semestre}', '${data.universidad}')`;
+    const sql = `INSERT INTO estudiante (nombre, p_apellido	, s_apellido, edad, semestre, uni) VALUES ('${data.nombre}', '${data.apellido_paterno}', 
+    '${data.apellido_materno}', '${data.edad}', '${data.semestre}', '${data.universidad}')`;
 
     conexion.query(sql, (error,results)=>{
     if (error) throw error;
@@ -129,8 +131,8 @@ app.post('/Empleados', (req, res) => {
     console.log("usando push puta");
     const data=req.body;
     
-    const sql = `INSERT INTO empleados (nombre, p_apellido	, s_apellido, edad, salario, puesta) VALUES ('${data.nombre}', '${data.primer_apellido}', 
-    '${data.segundo_apellido}', '${data.edad}', '${data.salario}', '${data.puesta}')`;
+    const sql = `INSERT INTO empleados (nombre, p_apellido	, s_apellido, edad, salario, puesta) VALUES ('${data.nombre}', '${data.apellido_paterno}', 
+    '${data.apellido_materno}', '${data.edad}', '${data.salario}', '${data.puesto_trabajo}')`;
 
     conexion.query(sql, (error,results)=>{
     if (error) throw error;
@@ -142,5 +144,3 @@ app.post('/Empleados', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
 });
-
-

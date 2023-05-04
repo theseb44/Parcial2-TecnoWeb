@@ -1,4 +1,4 @@
-import { Estudiante } from "../BackEnd/Clases/Estudiante";
+import { Estudiante } from "../BackEnd/Clases/Estudiante.js";
 const btn_E=document.getElementById("btn_E");
 
 const E_Nombre=document.getElementById("E_Nombre");
@@ -8,10 +8,11 @@ const E_edad=document.getElementById("E_Edadid");
 const semestre=document.getElementById("Semestre");
 const universidad=document.getElementById("Universidad");
 
-const AgregarEstudiante=()=>{
-    let estudiante = new Estudiante(E_Nombre, E_p_apellido, E_s_apellido, E_edad, semestre, universidad);
-    
+const AgregarEstudiante=(e)=>{
+    e.preventDefault();
+    let estudiante = new Estudiante(E_Nombre.value, E_p_apellido.value, E_s_apellido.value, E_edad.value, semestre.value, universidad.value);
     const ObjetoEstudiante=JSON.stringify(estudiante);
+    console.log(ObjetoEstudiante);
     localStorage.setItem("Estudiante",ObjetoEstudiante);
    
 }

@@ -1,27 +1,29 @@
-import {Estudiante} from "../Clases/Estudiante"
+import {Estudiante} from "../Clases/Estudiante.js"
 const botonact = document.getElementById("ActualizarbtnEst");
-const idEstudiante = document.getElementById("id-est-Act").value;
-const E_Nombre=document.getElementById("E_Nombre").value;
-const E_p_apellido=document.getElementById("E_P-apellido").value;
-const E_m_apellido=document.getElementById("E_M-apellido").value;
-const E_edad=document.getElementById("E_Edadid").value;
-const semestre=document.getElementById("Semestre").value;
-const universidad=document.getElementById("Universidad").value;
+const idEstudiante = document.getElementById("id-est-Act")
+const E_Nombre=document.getElementById("E_Nombre")
+const E_p_apellido=document.getElementById("E_P-apellido")
+const E_m_apellido=document.getElementById("E_M-apellido")
+const E_edad=document.getElementById("E_Edadid")
+const semestre=document.getElementById("Semestre")
+const universidad=document.getElementById("Universidad")
 
-const ActualizarDatos = () => {
-
-    let estudiante = new Estudiante(E_Nombre, E_p_apellido,E_m_apellido, E_edad, semestre, universidad )
+const ActualizarDatos = (e) => {
+    e.preventDefault();
+    console.log(E_Nombre.value);
+    let estudiante = new Estudiante(E_Nombre.value, E_p_apellido.value,E_m_apellido.value, E_edad.value, semestre.value, universidad.value )
     let estudiantejson = JSON.stringify(estudiante);
+    console.log(estudiantejson);
     try{
         fetch(`http://localhost:3000/updateE/${idEstudiante.value}`, {
             method : "put",
             body : estudiantejson
         })
 
-    }catch(e){
+    }catch(error){
 
-        alert(e);
+        alert(error);
     }
 }
 
-botonact.addEventListener("click",ActualizarDatos());
+botonact.addEventListener("click",ActualizarDatos);

@@ -20,12 +20,13 @@ const enviarEstudiante=(event)=>{
     };
     
     let JsonStuden=JSON.stringify(Estudiante);
-
+    console.log(JsonStuden);
+    /*
   fetch("http://localhost:3000/Estudiante",{
     method:"post",
     body:JsonStuden
   });
-
+*/
 };
 
 btn_E.addEventListener("click",enviarEstudiante);

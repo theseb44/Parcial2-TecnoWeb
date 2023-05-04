@@ -2,15 +2,15 @@ const idEstudiante = document.getElementById("id-emp-Elim");
 const btn = document.getElementById("BtnEliminarEmp");
 
 
-btn.addEventListener("click", () => {
-
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
     try {
-        fetch(`http://localhost:3000/eliminarE/${idEstudiante.value}`, {
+        fetch(`http://localhost:3000/eliminarEm/${idEstudiante.value}`, {
 
             method: "delete"
         })
 
-    } catch (e) {
-        alert(e);
+    } catch (error) {
+        alert(error);
     }
 })
