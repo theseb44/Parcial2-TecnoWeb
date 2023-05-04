@@ -56,5 +56,8 @@ function AñadirDataTables(datosjson){
         
         tabla.appendChild(tr);
     });
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
 }
-llamadaDatos();
+//llamadaDatos();

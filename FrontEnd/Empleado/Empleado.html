@@ -11,11 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Parcial2-TecnoWeb/FrontEnd/Particles/css/style.css">
+    <link rel="stylesheet" href="/FrontEnd/Particles/css/style.css">
 </head>
 
 <body>
     <div id="particles-js"></div>
+    
     <form action="">
 
         <nav class="navbar navbar bg-gradient navbar-expand-lg  navbar-expand-sm">
@@ -23,13 +24,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="./Index.html">Inicio</a>
+                            <a class="nav-link active text-white" aria-current="page" href="/FrontEnd/Index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Parcial2-TecnoWeb/FrontEnd/Estudiante/Estudiante.html">Ingresar estudiantes</a>
+                            <a class="nav-link text-white" href="/FrontEnd/Estudiante/Estudiante.html">Ingresar estudiantes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Parcial2-TecnoWeb/FrontEnd/Empleado/EmpleadoData.html" >ver datatables</a>
+                            <a class="nav-link text-white" href="/FrontEnd/Empleado/EmpleadoData.html" >ver datatables</a>
                         </li>
                     </ul>
                 </div>
@@ -41,22 +42,22 @@
             <div class="container col-md-10  ">
                 <br>
                 <label class="form-label" for="Nombre">Nombre:</label>
-                <input class="form-control" type="text" id="EM_Nombre">
+                <input class="form-control" required title="Porfavor ingresar el campo" type="text" id="EM_Nombre">
                 <br>
                 <label class="form-label" for="P-apellido">Primer apellido:</label>
-                <input class="form-control" type="text" id="EM_P-apellido">
+                <input class="form-control" required title="Porfavor ingresar el campo" type="text" id="EM_P-apellido">
                 <br>
                 <label class="form-label" for="M-apellido">Segundo apellido:</label>
-                <input class="form-control" type="tel" id="EM_M-apellido">
+                <input class="form-control" required title="Porfavor ingresar el campo" type="tel" id="EM_M-apellido">
                 <br>
                 <label class="form-label"  for="Edad">Edad:</label>
-                <input class="form-control" id="EM_Edadid" type="text">
+                <input class="form-control" required title="Porfavor ingresar el campo" id="EM_Edadid" type="number">
                 <br>
                 <label class="form-label" for="Salario">Salario:</label>
-                <input class="form-control" type="text" id="Salario">
+                <input class="form-control" required title="Porfavor ingresar el campo" type="number" id="Salario">
                 <br>
                 <label class="form-label" for="Puesto">Puesto de trabajo:</label>
-                <input class="form-control" type="text" id="Puesto">
+                <input class="form-control" required title="Porfavor ingresar el campo" type="text" id="Puesto">
                 <br>
                 <br>
                 <button id="btn_Em" class="btn btn-outline-light ">Enviar Empleado</button>
@@ -82,13 +83,13 @@
     </div>
 
 
-    <script src="/Parcial2-TecnoWeb/FrontEnd/Particles/particles.js"></script>
-    <script src="/Parcial2-TecnoWeb/FrontEnd/Particles/js/app.js"></script>
-    <script type="module" src="/Parcial2-TecnoWeb/LocalStorage/Empleados.js"></script>
-    <script src="/Parcial2-TecnoWeb/BackEnd/empleado.js"></script>
-    <script src="/Parcial2-TecnoWeb/BackEnd/Eliminar/EliminarEmp.js"></script>
-    <script type="module" src="/Parcial2-TecnoWeb/BackEnd/Actualizar/ActualizarEmp.js"></script>
-    <script src="/Parcial2-TecnoWeb/BackEnd/DataTables/DataTablesEmp.js"></script>
+    <script src="/FrontEnd/Particles/particles.js"></script>
+    <script src="/FrontEnd/Particles/js/app.js"></script>
+    <script type="module" src="/LocalStorage/Empleados.js"></script>
+    <script type="module" src="/BackEnd/empleado.js"></script>
+    <script type="module" src="/BackEnd/Eliminar/EliminarEmp.js"></script>
+    <script type="module" src="/BackEnd/Actualizar/ActualizarEmp.js"></script>
+    <script src="/BackEnd/DataTables/DataTablesEmp.js"></script>
     
 </body>
 

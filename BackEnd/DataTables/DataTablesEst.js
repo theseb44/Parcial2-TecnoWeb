@@ -1,6 +1,5 @@
 const tabla = document.getElementById('tbody-estudiante');
 
-
 const llamadaDatos = async () =>{
 
     try{
@@ -8,7 +7,7 @@ const llamadaDatos = async () =>{
         let datosjson = await datos.json();
         if(!datos.ok)throw { status: res.status, statusText: res.statusText };
 
-
+        
         AñadirDataTables(datosjson);
         
 
@@ -56,5 +55,8 @@ function AñadirDataTables(datosjson){
         
         tabla.appendChild(tr);
     });
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
 }
-llamadaDatos();
+//llamadaDatos();

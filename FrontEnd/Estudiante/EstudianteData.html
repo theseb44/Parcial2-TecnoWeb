@@ -12,12 +12,13 @@
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="llamadaDatos()">
     <!--#TODO Hacer datatables-->
 
     <table id="example" class="table  table-striped table-hover" style="width: 100%">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Primer apellido</th>
                 <th>Segundo apellido</th>
@@ -28,7 +29,7 @@
         </thead>
         <tbody id="tbody-estudiante">
 
-        
+
         </tbody>
     </table>
 
@@ -38,12 +39,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
     <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>
-    <script src="/Parcial2-TecnoWeb/BackEnd/DataTables/DataTablesEst.js"></script>
+    
+    <script src="/BackEnd/DataTables/DataTablesEst.js"></script>
 </body>
 
 </html>

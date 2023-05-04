@@ -114,7 +114,7 @@ app.get('/EmpleadoTodos',(req,res)=>{
 
 //-------------POST Agregar a la base de datos----------------------
 app.post('/Estudiante', (req, res) => {
-    console.log("usando push puta");
+    
     const data=req.body;
     
     const sql = `INSERT INTO estudiante (nombre, p_apellido	, s_apellido, edad, semestre, uni) VALUES ('${data.nombre}', '${data.apellido_paterno}', 
@@ -128,7 +128,7 @@ app.post('/Estudiante', (req, res) => {
 });
 
 app.post('/Empleados', (req, res) => {
-    console.log("usando push puta");
+    
     const data=req.body;
     
     const sql = `INSERT INTO empleados (nombre, p_apellido	, s_apellido, edad, salario, puesta) VALUES ('${data.nombre}', '${data.apellido_paterno}', 

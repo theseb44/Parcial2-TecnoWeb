@@ -1,4 +1,5 @@
 import {Empleado} from "../Clases/Empleado.js"
+import {RespuestaBDNotificacion} from "../alert.js"
 const botonAct = document.getElementById("ActualizarBtnEmp")
 const idEmpleado = document.getElementById("id-emp-Act")
 const Em_Nombre=document.getElementById("EM_Nombre")
@@ -18,11 +19,7 @@ const idEmpleado = document.getElementById("id-emp-Act")
             method : "put",
             body : empleadojson
         }).then(response => {
-            if (response.ok) {
-                alert("Los datos se han actualizado correctamente");
-              } else {
-                alert("Ha habido un error al actualizar los datos");
-              }
+            RespuestaBDNotificacion(response.ok, "Los datos se han actualizado correctamente", "ha habido un error al actualizar los datos")
           })
 
     }catch(error){

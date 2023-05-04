@@ -1,4 +1,6 @@
 import {Estudiante} from "../Clases/Estudiante.js"
+import {RespuestaBDNotificacion} from "../alert.js"
+
 const botonact = document.getElementById("ActualizarbtnEst");
 const idEstudiante = document.getElementById("id-est-Act")
 const E_Nombre=document.getElementById("E_Nombre")
@@ -19,11 +21,8 @@ const ActualizarDatos = (e) => {
             method : "put",
             body : estudiantejson
         }).then(response => {
-            if (response.ok) {
-              alert("Los datos se han actualizado correctamente");
-            } else {
-              alert("Ha habido un error al actualizar los datos");
-            }
+            
+            RespuestaBDNotificacion(response.ok, "Los datos se han actualizado correctamente", "ha habido un error al actualizar los datos")
           })
 
     }catch(error){
