@@ -17,7 +17,13 @@ const idEmpleado = document.getElementById("id-emp-Act")
         fetch(`http://localhost:3000/updateEm/${idEmpleado.value}`, {
             method : "put",
             body : empleadojson
-        })
+        }).then(response => {
+            if (response.ok) {
+                alert("Los datos se han actualizado correctamente");
+              } else {
+                alert("Ha habido un error al actualizar los datos");
+              }
+          })
 
     }catch(error){
 

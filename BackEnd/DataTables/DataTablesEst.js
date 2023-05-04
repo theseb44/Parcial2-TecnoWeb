@@ -22,7 +22,11 @@ function AñadirDataTables(datosjson){
     datosjson.forEach(objeto => {
 
         let fragmento = document.createDocumentFragment()
-        // Crear un nuevo elemento tr
+
+        let td0 = document.createElement('td');
+        td0.textContent = objeto.id;
+        fragmento.appendChild(td0)
+        
         let td1 = document.createElement('td');
         td1.textContent = objeto.nombre;
         fragmento.appendChild(td1)

@@ -6,7 +6,7 @@ const llamadaDatos = async () =>{
     try{
         let datos = await fetch("http://localhost:3000/EmpleadoTodos");
         let datosjson = await datos.json();
-        console.log(datosjson);
+        
         if(!datos.ok)throw { status: res.status, statusText: res.statusText };
 
 
@@ -19,10 +19,14 @@ const llamadaDatos = async () =>{
 }
 
 function AñadirDataTables(datosjson){
-    console.log(datosjson)
+    
     datosjson.forEach(objeto => {
         let fragmento = document.createDocumentFragment()
-        // Crear un nuevo elemento tr
+
+        let td0 = document.createElement('td');
+        td0.textContent = objeto.id;
+        fragmento.appendChild(td0)
+
         let td1 = document.createElement('td');
         td1.textContent = objeto.nombre;
         fragmento.appendChild(td1)

@@ -18,7 +18,13 @@ const ActualizarDatos = (e) => {
         fetch(`http://localhost:3000/updateE/${idEstudiante.value}`, {
             method : "put",
             body : estudiantejson
-        })
+        }).then(response => {
+            if (response.ok) {
+              alert("Los datos se han actualizado correctamente");
+            } else {
+              alert("Ha habido un error al actualizar los datos");
+            }
+          })
 
     }catch(error){
 
